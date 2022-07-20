@@ -1,0 +1,340 @@
+%% ****** Start of file apstemplate.tex ****** %
+%%
+%%
+%%   This file is part of the APS files in the REVTeX 4.2 distribution.
+%%   Version 4.2a of REVTeX, January, 2015
+%%
+%%
+%%   Copyright (c) 2015 The American Physical Society.
+%%
+%%   See the REVTeX 4 README file for restrictions and more information.
+%%
+%
+% This is a template for producing manuscripts for use with REVTEX 4.2
+% Copy this file to another name and then work on that file.
+% That way, you always have this original template file to use.
+%
+% Group addresses by affiliation; use superscriptaddress for long
+% author lists, or if there are many overlapping affiliations.
+% For Phys. Rev. appearance, change preprint to twocolumn.
+% Choose pra, prb, prc, prd, pre, prl, prstab, prstper, or rmp for journal
+%  Add 'draft' option to mark overfull boxes with black boxes
+%  Add 'showkeys' option to make keywords appear
+%\documentclass[aps,prd,preprint,amsmath,amssymb,groupedaddress]{revtex4-2}
+\documentclass[aps,prd,twocolumn,amsmath,amssymb,groupedaddress]{revtex4-2}
+%\documentclass[aps,prl,preprint,superscriptaddress]{revtex4-2}
+%\documentclass[aps,prl,reprint,groupedaddress]{revtex4-2}
+
+% You should use BibTeX and apsrev.bst for references
+% Choosing a journal automatically selects the correct APS
+% BibTeX style file (bst file), so only uncomment the line
+% below if necessary.
+%\bibliographystyle{apsrev4-2}
+
+\begin{document}
+
+% Use the \preprint command to place your local institutional report
+% number in the upper righthand corner of the title page in preprint mode.
+% Multiple \preprint commands are allowed.
+% Use the 'preprintnumbers' class option to override journal defaults
+% to display numbers if necessary
+%\preprint{}
+
+%Title of paper
+\title{Collision}
+
+% repeat the \author .. \affiliation  etc. as needed
+% \email, \thanks, \homepage, \altaffiliation all apply to the current
+% author. Explanatory text should go in the []'s, actual e-mail
+% address or url should go in the {}'s for \email and \homepage.
+% Please use the appropriate macro foreach each type of information
+
+% \affiliation command applies to all authors since the last
+% \affiliation command. The \affiliation command should follow the
+% other information
+% \affiliation can be followed by \email, \homepage, \thanks as well.
+\author{YU-CHIA LIN}
+\email[]{yuchialin@unm.edu}
+%\homepage[]{Your web page}
+%\thanks{}
+%\altaffiliation{}
+\affiliation{Department of Physics \& Astronomy, University of New Mexicoo, Albuquerque, New Mexico 87131, USA}
+\affiliation{Department of Astronomy, University of Arizona, Tucson, Arizona 85721, USA}
+\affiliation{Department of Physics, University of Arizona, Tucson, Arizona 85721, USA}
+%Collaboration name if desired (requires use of superscriptaddress
+%option in \documentclass). \noaffiliation is required (may also be
+%used with the \author command).
+%\collaboration can be followed by \email, \homepage, \thanks as well.
+%\collaboration{}
+%\noaffiliation
+
+\date{\today}
+
+\begin{abstract}
+% insert abstract here
+We investigate the collision term effects in the neutrino flavor oscillation.
+\end{abstract}
+
+% insert suggested keywords - APS authors don't need to do this
+%\keywords{}
+
+%\maketitle must follow title, authors, abstract, and keywords
+\maketitle
+
+% body of paper here - Use proper section commands
+% References should be done using the \cite, \ref, and \label commands
+\section{\label{sec:intro} INTRODUCTION}
+
+\subsection{}
+\subsubsection{}
+
+\section{\label{sec:model} MODEL}
+In this work, we consider the two-flavor neutrino flavor oscillation between $\nu_e$ and $\nu_\tau$, where $\nu_\tau$ represents a linear combination of the physical $\mu$ and $\tau$ flavor neutrino. On the other hand, we only consider monochromatic neutrino to simplify the model.
+
+Denoting the (anti-)neutrino flavor density matrix and the corresponding polarization vector as
+\begin{equation}
+	\rho = \begin{bmatrix}
+		\rho_{11} ~~~ \rho_{12} \\
+		\rho_{21} ~~~ \rho_{22}
+	\end{bmatrix}
+\end{equation}
+($\bar{\rho}$)and $\textbf{P}$($\bar{\textbf{P}}$) respectively, or
+\begin{eqnarray}
+	\rho_{ex} &\equiv& \rho_{12} = \frac{1}{2}\left(P_x + i P_y\right) \\
+	\bar{\rho}_{ex} &\equiv& \bar{\rho}_{12} = \frac{1}{2}\left(\bar{P}_x + i \bar{P}_y\right) 
+\end{eqnarray}, where $P_i$($\bar{P}_i$) is the $i$ component of $P$($\bar{P}$). 
+
+Considering the collision terms, we have equations of motion (EOM) for polarization vectors as follows:
+\begin{widetext}
+\begin{eqnarray} 
+	\dot{\textbf{P}} &=& \omega \textbf{B} \times \textbf{P}+ \mu (\textbf{P}-\bar{\textbf{P}}) \times \textbf{P} - \Gamma^{CC}_+ \textbf{P}_T + \Gamma^{AE}_+ (\textbf{P}^{AE} - \textbf{P}) + \Gamma^{AE}_- (P^{AE}_0 -P_0)\textbf{z} \\
+	\dot{\bar{\textbf{P}}} &=& -\omega \textbf{B} \times \bar{\textbf{P}}+ \mu (\textbf{P}-\bar{\textbf{P}}) \times \bar{\textbf{P}} - \bar{\Gamma}^{CC}_+ \bar{\textbf{P}}_T + \bar{\Gamma}^{AE}_+ (\bar{\textbf{P}}^{AE} - \bar{\textbf{P}}) + \bar{\Gamma}^{AE}_- (\bar{P}^{AE}_0 -\bar{P}_0)\textbf{z} \\
+	\dot{P_0} &=& \Gamma^{AE}_+ (P^{AE}_0 -P_0) + \Gamma^{AE}_- (P^{AE}_z -P_z) \\
+	\dot{\bar{P}_0} &=& \bar{\Gamma}^{AE}_+ (\bar{P}^{AE}_0 -\bar{P}_0) + \bar{\Gamma}^{AE}_- (\bar{P}^{AE}_z -\bar{P}_z)
+\end{eqnarray}
+\end{widetext}
+We then choose the parameters
+
+\begin{eqnarray}
+	\begin{bmatrix}
+		\omega \\ 
+		\textbf{B} \\ 
+		\mu \\ 
+		\theta
+	\end{bmatrix}
+	= \begin{bmatrix}
+		0.3 ~km^{-1} \\ -sin 2\theta~\textbf{e}_x^f + cos 2\theta~\textbf{e}_z^f \\ 3 \times 10^5 ~km^{-1} \\ 10^{-6}
+	\end{bmatrix}
+\end{eqnarray}
+\begin{eqnarray}
+	\begin{bmatrix}
+		\Gamma^{CC}_+ \\ \Gamma^{AE}_+ \\ \Gamma^{AE}_-
+	\end{bmatrix}
+	= \begin{bmatrix}
+		0.5/11.4 ~km^{-1} \\ 0.5/0.417 ~km^{-1} \\ 0.5/0.417 ~km^{-1}
+	\end{bmatrix}
+\end{eqnarray}
+
+\begin{eqnarray}
+	\begin{bmatrix}
+		\bar{\Gamma}^{CC}_+ \\ \bar{\Gamma}^{AE}_+ \\ \bar{\Gamma}^{AE}_-
+	\end{bmatrix}
+	= \begin{bmatrix}
+		0.5/37.2 ~km^{-1} \\ 0.5/4.36 ~km^{-1} \\ 0.5/4.36 ~km^{-1} 
+	\end{bmatrix}
+\end{eqnarray}
+
+\begin{eqnarray}
+	\begin{bmatrix}
+		\textbf{P}^{AE} \\ P^{AE}_0 \\ \bar{\textbf{P}}^{AE} \\ \bar{P}^{AE}_0
+	\end{bmatrix}
+	= \begin{bmatrix}
+		2 ~\textbf{e}_z^f\\ 4 \\ 1.5 ~\textbf{e}_z^f \\ 3.5
+	\end{bmatrix}
+\end{eqnarray}
+
+and theinitial condition
+\begin{eqnarray}
+\begin{bmatrix}
+	\textbf{P} \\ P_0 \\ \bar{\textbf{P}} \\ \bar{P}_0
+\end{bmatrix}
+= \begin{bmatrix}
+	2 ~\textbf{e}_z^f\\ 4 \\ 1.5 ~\textbf{e}_z^f \\ 3.5
+\end{bmatrix}
+\end{eqnarray}
+
+\section{\label{sec:results} Results}
+
+\subsection{\label{subsec:linear} Linearlized EOM}
+When $P_x, ~P_y \ll P_z \sim 1$, nonlinear terms could be ignored, we have
+\begin{widetext}
+\begin{eqnarray}
+	i \partial_t \rho_{ex} = \omega ~sin2\theta P_{z}
+	+\left[-\omega ~cos2\theta-\sqrt{2}G_F(n_{\bar{\nu_e}}-n_{\bar{\nu_x}})- i \Gamma \right]\rho_{ex} + \sqrt{2}G_F(n_{\nu_e}-n_{\nu_x}) \bar{\rho}_{ex}\\
+	i \partial_t \bar{\rho}_{ex} = - \omega ~sin2\theta \bar{P}_{z} +\left[+\omega ~cos2\theta + \sqrt{2}G_F(n_{\nu_e}-n_{\nu_x}) - i \bar{\Gamma} \right]\bar{\rho}_{ex} -\sqrt{2}G_F(n_{\bar{\nu_e}}-n_{\bar{\nu_x}}) \rho_{ex}
+\end{eqnarray}
+\end{widetext}
+,
+where
+\begin{equation}
+\begin{cases}
+	B \equiv (sin 2\theta,0 ,cos 2\theta)
+	\\
+	\rho_{ex} \equiv \rho_{21} = P_x+i P_y
+	\\
+	\bar{\rho}_{ex} \equiv \bar{\rho}_{21} = \bar{P}_x+i \bar{P}_y
+	\\
+	\Gamma \equiv \Gamma^{AE} + \Gamma^{CC}
+	\\
+	\bar{\Gamma} \equiv \bar{\Gamma}^{AE} + \bar{\Gamma}^{CC}
+\end{cases}
+\end{equation}
+
+Let
+\begin{equation}
+\begin{cases}
+	\mu_+ \equiv \left(\frac{S+D}{2}\right) \mu
+	\\
+	\mu_- \equiv \left(\frac{S-D}{2}\right) \mu
+\end{cases}
+\end{equation}
+and
+\begin{equation}
+A = \begin{bmatrix}
+	-\omega ~cos2\theta-\mu_--i\Gamma ~~~~~~~~~ \mu_+ ~~~~~~~~~~~~~~~~\\ ~~~~~~~~~ -\mu_- ~~~~~~~~ \omega ~cos2\theta+\mu_+-i\bar{\Gamma}
+\end{bmatrix}
+\end{equation}
+
+, we have
+\begin{equation}
+	\label{equ:EOM_matrix}
+	i \partial_t \begin{bmatrix}
+		\rho_{ex} \\ \bar{\rho}_{ex}
+	\end{bmatrix} =
+	\begin{bmatrix}
+		\omega ~sin2\theta \\ - \omega ~sin2\theta
+	\end{bmatrix} + A \begin{bmatrix}
+		\rho_{ex} \\ \bar{\rho}_{ex}
+	\end{bmatrix}
+\end{equation}
+
+Notice that, $P_{z}$ and $\bar{P}_{z}$ are both close to 1 under this limitation condition.
+
+\subsection{\label{subsec:analytic} Analytic Solution}
+Assume
+\begin{equation}
+	\begin{cases}
+		\rho_{ex}(t) = \rho^0_{ex} + Q e^{-i\Omega t}
+		\\
+		\bar{\rho}_{ex}(t) = \bar{\rho}^0_{ex} + \bar{Q} e^{-i\Omega t}
+	\end{cases}
+\end{equation}
+, where $\rho^0_{ex}$ and $\bar{\rho}^0_{ex}$ satisfy
+\begin{equation}
+	0= \begin{bmatrix}
+		\omega ~sin2\theta \\ - \omega ~sin2\theta
+	\end{bmatrix}  + 
+	A \begin{bmatrix} \rho^0_{ex} \\ \bar{\rho}^0_{ex}
+	\end{bmatrix}
+\end{equation}
+Then, from equation \ref{equ:EOM_matrix}, we have
+\begin{equation}
+	\Omega 
+	\begin{bmatrix}
+		Q \\ \bar{Q}
+	\end{bmatrix}
+	= A
+	\begin{bmatrix}
+		Q \\ \bar{Q}
+	\end{bmatrix}
+\end{equation}
+
+\section{\label{sec:disscussion} DISCUSSION}
+
+\section{\label{sec:conclusion} CONCLUSIONS}
+
+% If in two-column mode, this environment will change to single-column
+% format so that long equations can be displayed. Use
+% sparingly.
+%\begin{widetext}
+% put long equation here
+%\end{widetext}
+
+% figures should be put into the text as floats.
+% Use the graphics or graphicx packages (distributed with LaTeX2e)
+% and the \includegraphics macro defined in those packages.
+% See the LaTeX Graphics Companion by Michel Goosens, Sebastian Rahtz,
+% and Frank Mittelbach for instance.
+%
+% Here is an example of the general form of a figure:
+% Fill in the caption in the braces of the \caption{} command. Put the label
+% that you will use with \ref{} command in the braces of the \label{} command.
+% Use the figure* environment if the figure should span across the
+% entire page. There is no need to do explicit centering.
+
+% \begin{figure}
+% \includegraphics{}%
+% \caption{\label{}}
+% \end{figure}
+
+% Surround figure environment with turnpage environment for landscape
+% figure
+% \begin{turnpage}
+% \begin{figure}
+% \includegraphics{}%
+% \caption{\label{}}
+% \end{figure}
+% \end{turnpage}
+
+% tables should appear as floats within the text
+%
+% Here is an example of the general form of a table:
+% Fill in the caption in the braces of the \caption{} command. Put the label
+% that you will use with \ref{} command in the braces of the \label{} command.
+% Insert the column specifiers (l, r, c, d, etc.) in the empty braces of the
+% \begin{tabular}{} command.
+% The ruledtabular enviroment adds doubled rules to table and sets a
+% reasonable default table settings.
+% Use the table* environment to get a full-width table in two-column
+% Add \usepackage{longtable} and the longtable (or longtable*}
+% environment for nicely formatted long tables. Or use the the [H]
+% placement option to break a long table (with less control than 
+% in longtable).
+% \begin{table}%[H] add [H] placement to break table across pages
+% \caption{\label{}}
+% \begin{ruledtabular}
+% \begin{tabular}{}
+% Lines of table here ending with \\
+% \end{tabular}
+% \end{ruledtabular}
+% \end{table}
+
+% Surround table environment with turnpage environment for landscape
+% table
+% \begin{turnpage}
+% \begin{table}
+% \caption{\label{}}
+% \begin{ruledtabular}
+% \begin{tabular}{}
+% \end{tabular}
+% \end{ruledtabular}
+% \end{table}
+% \end{turnpage}
+
+% Specify following sections are appendices. Use \appendix* if there
+% only one appendix.
+%\appendix
+%\section{}
+
+% If you have acknowledgments, this puts in the proper section head.
+%\begin{acknowledgments}
+% put your acknowledgments here.
+%\end{acknowledgments}
+
+% Create the reference section using BibTeX:
+\bibliography{basename of .bib file}
+
+\end{document}
+%
+% ****** End of file apstemplate.tex ******
+
