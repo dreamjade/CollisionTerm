@@ -72,12 +72,12 @@
 
 \begin{abstract}
 % insert abstract here
-We investigate the collision term effects in the neutrino flavor oscillation.
+The interaction between collisions and collective neutrino oscillations has been a long-standing mystery. We study the effect of the collision term in neutrino flavor oscillations and focus on one case of collision-generated instabilities.
+We sought to develop an analytical model demonstrating how the asymmetry between collisional interactions between neutrinos and antineutrinos creates instability, an interplay that may be prevalent inside supernovae. Our model may be applicable to a wider range of collision-generated instabilities.
 \end{abstract}
 
 % insert suggested keywords - APS authors don't need to do this
 %\keywords{}
-
 %\maketitle must follow title, authors, abstract, and keywords
 \maketitle
 
@@ -89,7 +89,7 @@ We investigate the collision term effects in the neutrino flavor oscillation.
 \subsubsection{}
 
 \section{\label{sec:model} MODEL}
-In this work, we consider the two-flavor neutrino flavor oscillation between $\nu_e$ and $\nu_\tau$, where $\nu_\tau$ represents a linear combination of the physical $\mu$ and $\tau$ flavor neutrino. On the other hand, we only consider monochromatic neutrino to simplify the model.
+In this work, we consider the isotropic and single-energy two-flavor neutrino flavor oscillation between $\nu_e$ and $\nu_\tau$, where $\nu_\tau$ represents a linear combination of the physical $\mu$ and $\tau$ flavor neutrino. On the other hand, we only consider monochromatic neutrino to simplify the model.
 
 Denoting the (anti-)neutrino flavor density matrix and the corresponding polarization vector as
 \begin{equation}
@@ -100,20 +100,23 @@ Denoting the (anti-)neutrino flavor density matrix and the corresponding polariz
 \end{equation}
 ($\bar{\rho}$)and $\textbf{P}$($\bar{\textbf{P}}$) respectively, or
 \begin{eqnarray}
-	\rho_{ex} &\equiv& \rho_{12} = \frac{1}{2}\left(P_x + i P_y\right) \\
-	\bar{\rho}_{ex} &\equiv& \bar{\rho}_{12} = \frac{1}{2}\left(\bar{P}_x + i \bar{P}_y\right) 
-\end{eqnarray}, where $P_i$($\bar{P}_i$) is the $i$ component of $P$($\bar{P}$). 
+	\rho_{ex} &\equiv& \rho_{21} = \frac{1}{2}\left(P_x + i P_y\right) \\
+	\bar{\rho}_{ex} &\equiv& \bar{\rho}_{21} = \frac{1}{2}\left(\bar{P}_x + i \bar{P}_y\right) 
+\end{eqnarray}, where $P_i$($\bar{P}_i$) is the $i$ component of $\textbf{P}$($\bar{\textbf{P}}$). 
 
-Considering the collision terms, we have equations of motion (EOM) for polarization vectors as follows:
+Considering three types of collision terms, absorption and emission (AE), charged current
+scattering (CC), and neutral-current scattering (NC), we have equations of motion (EOM) for polarization vectors as follows (see Ref.~[\cite{2021arXiv210411369J}]):
 \begin{widetext}
 \begin{eqnarray} 
 	\dot{\textbf{P}} &=& \omega \textbf{B} \times \textbf{P}+ \mu (\textbf{P}-\bar{\textbf{P}}) \times \textbf{P} - \Gamma^{CC}_+ \textbf{P}_T + \Gamma^{AE}_+ (\textbf{P}^{AE} - \textbf{P}) + \Gamma^{AE}_- (P^{AE}_0 -P_0)\textbf{z} \\
 	\dot{\bar{\textbf{P}}} &=& -\omega \textbf{B} \times \bar{\textbf{P}}+ \mu (\textbf{P}-\bar{\textbf{P}}) \times \bar{\textbf{P}} - \bar{\Gamma}^{CC}_+ \bar{\textbf{P}}_T + \bar{\Gamma}^{AE}_+ (\bar{\textbf{P}}^{AE} - \bar{\textbf{P}}) + \bar{\Gamma}^{AE}_- (\bar{P}^{AE}_0 -\bar{P}_0)\textbf{z} \\
 	\dot{P_0} &=& \Gamma^{AE}_+ (P^{AE}_0 -P_0) + \Gamma^{AE}_- (P^{AE}_z -P_z) \\
-	\dot{\bar{P}_0} &=& \bar{\Gamma}^{AE}_+ (\bar{P}^{AE}_0 -\bar{P}_0) + \bar{\Gamma}^{AE}_- (\bar{P}^{AE}_z -\bar{P}_z)
+	\dot{\bar{P_0}} &=& \bar{\Gamma}^{AE}_+ (\bar{P}^{AE}_0 -\bar{P}_0) + \bar{\Gamma}^{AE}_- (\bar{P}^{AE}_z -\bar{P}_z)
 \end{eqnarray}
 \end{widetext}
-We then choose the parameters
+, where  $\Gamma^{P}_\pm = \left(\Gamma^{P}_e \pm  \Gamma^{P}_x\right)/2$, $\Gamma_{P} = diag \left(\Gamma^{P}_e/2, ~\Gamma^{P}_x/2 \right)$.
+
+In the following calculation, we then choose the parameters
 
 \begin{eqnarray}
 	\begin{bmatrix}
@@ -180,10 +183,6 @@ where
 \begin{cases}
 	B \equiv (sin 2\theta,0 ,cos 2\theta)
 	\\
-	\rho_{ex} \equiv \rho_{21} = P_x+i P_y
-	\\
-	\bar{\rho}_{ex} \equiv \bar{\rho}_{21} = \bar{P}_x+i \bar{P}_y
-	\\
 	\Gamma \equiv \Gamma^{AE} + \Gamma^{CC}
 	\\
 	\bar{\Gamma} \equiv \bar{\Gamma}^{AE} + \bar{\Gamma}^{CC}
@@ -248,6 +247,7 @@ Then, from equation \ref{equ:EOM_matrix}, we have
 		Q \\ \bar{Q}
 	\end{bmatrix}
 \end{equation}
+
 
 \section{\label{sec:disscussion} DISCUSSION}
 
