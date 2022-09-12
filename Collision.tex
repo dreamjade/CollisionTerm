@@ -313,7 +313,7 @@ Now, we could compare this analytical solution with the numerical solution (FIG.
 
 \begin{figure}[b]
 	\includegraphics[scale=0.15]{compare_tp.png}
-	\caption{\label{fig:compare_tp} Comparing $t_p$ in equation (\ref{equ:tp}) with numerical simulation}
+	\caption{\label{fig:compare_tp} Comparing $t_p$ in equation (\ref{equ:tp}) with numerical simulation for different $\theta$ and $\mu$}
 \end{figure}
 
 In this subsection, we consider $\mu S, ~\mu D \gg \omega, ~\Gamma, ~\bar{\Gamma} $ and $\theta \ll 1$. Then, the zero order approximation of equation (\ref{equ:rho0}) 
@@ -411,7 +411,7 @@ Therefore, the start time of the exponential grow
 	&\simeq&
 	\frac{1}{\left[\frac{S}{2D}\left(\Gamma-\bar{\Gamma}\right)-\frac{1}{2}\left(\Gamma+\bar{\Gamma}\right)\right]} \nonumber \\
 	&&\ln(\frac{2\mu D^2\sqrt{S^2+D^2}}{S\sqrt{\omega^2S^2+\left[(S+D) \Gamma + (D-S) \bar{\Gamma}\right]^2}}) \\
-	&\sim& \ln(\mu)
+	&\sim& \ln(\mu^1 \theta^0)
 \end{eqnarray}
 which is independent of $\theta$.
 
@@ -422,7 +422,7 @@ Beside, we could get the time when the $\left| \left(\rho^0_{ex}, ~\bar{\rho}^0_
 	\frac{1}{\rm{Im}\{\Omega_+\}}ln(\frac{\rho_{p}}{\left|Q_+\left(v_{12}, ~ v_{22}\right)\right|})	\nonumber \\
 	&\simeq&
 	\frac{1}{\left[\frac{S}{2D}\left(\Gamma-\bar{\Gamma}\right)-\frac{1}{2}\left(\Gamma+\bar{\Gamma}\right)\right]} \ln(\frac{\mu D^2}{2\theta \omega S}) \\
-	&\sim& \ln(\mu \theta^{-1})
+	&\sim& \ln(\mu^1 \theta^{-1})
 \end{eqnarray}
 
 For $\rho_p = 0.01$, we could compare the results of equation (\ref{equ:tp}) with the numerical simulation in FIG. \ref{fig:compare_tp}.
