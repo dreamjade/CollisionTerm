@@ -24,6 +24,7 @@
 \documentclass[aps,prd,twocolumn,amsmath,amssymb,groupedaddress]{revtex4-2}
 %\documentclass[aps,prl,preprint,superscriptaddress]{revtex4-2}
 %\documentclass[aps,prl,reprint,groupedaddress]{revtex4-2}
+\usepackage{graphicx}
 
 % You should use BibTeX and apsrev.bst for references
 % Choosing a journal automatically selects the correct APS
@@ -73,7 +74,9 @@
 \begin{abstract}
 % insert abstract here
 The interaction between collisions and collective neutrino oscillations has been a long-standing mystery. We study the effect of the collision term in neutrino flavor oscillations and focus on one case of collision-generated instabilities.
-We sought to develop an analytical model demonstrating how the asymmetry between collisional interactions between neutrinos and antineutrinos creates instability, an interplay that may be prevalent inside supernovae. Our model may be applicable to a wider range of collision-generated instabilities.
+We sought to develop an analytical model demonstrating how the asymmetry of collisional interactions between neutrinos and antineutrinos creates instability, an interplay that may be prevalent inside supernovae. 
+In addition, our model clearly shows when the exponential growth caused by this instability starts, how fast it grows, and the effect of various parameters on the bump.
+Our model may be applicable to a wider range of collision-generated instabilities.
 \end{abstract}
 
 % insert suggested keywords - APS authors don't need to do this
@@ -89,23 +92,25 @@ We sought to develop an analytical model demonstrating how the asymmetry between
 \subsubsection{}
 
 \section{\label{sec:model} MODEL}
-In this work, we consider the isotropic and single-energy two-flavor neutrino flavor oscillation between $\nu_e$ and $\nu_\tau$, where $\nu_\tau$ represents a linear combination of the physical $\mu$ and $\tau$ flavor neutrino. On the other hand, we only consider monochromatic neutrino to simplify the model.
+In this work, we consider the isotropic and homogeneous two-flavor neutrino flavor oscillation between $\nu_e$ and $\nu_\tau$, where $\nu_\tau$ represents a linear combination of the physical $\mu$ and $\tau$ flavor neutrino.
 
-Denoting the (anti-)neutrino flavor density matrix and the corresponding polarization vector as
+Denoting the neutrino flavor density matrix and the corresponding polarization vector as
 \begin{equation}
 	\rho = \begin{bmatrix}
 		\rho_{11} ~~~ \rho_{12} \\
 		\rho_{21} ~~~ \rho_{22}
 	\end{bmatrix}
 \end{equation}
-($\bar{\rho}$)and $\textbf{P}$($\bar{\textbf{P}}$) respectively, or
+and $\textbf{P}$ respectively, or
 \begin{eqnarray}
 	\rho_{ex} &\equiv& \rho_{21} = \frac{1}{2}\left(P_x + i P_y\right) \\
-	\bar{\rho}_{ex} &\equiv& \bar{\rho}_{21} = \frac{1}{2}\left(\bar{P}_x + i \bar{P}_y\right) 
-\end{eqnarray}, where $P_i$($\bar{P}_i$) is the $i$ component of $\textbf{P}$($\bar{\textbf{P}}$). 
+    \rho &=& \frac{1}{2} \left(P_0+\textbf{P} \cdot \sigma\right)
+\end{eqnarray}, where $P_i$ is the $i$ component of $\textbf{P}$. 
 
-Considering three types of collision terms, absorption and emission (AE), charged current
-scattering (CC), and neutral-current scattering (NC), we have equations of motion (EOM) for polarization vectors as follows (see Ref.~[\cite{2021arXiv210411369J}]):
+As for the collision processes(P), we consider three types processes, absorption and emission (AE), charged current
+scattering (CC), and neutral-current scattering (NC). The corresponding polarization vectors in equilibrium states and  are denoted as $\textbf{P}^{P}$ and $P_0^P$. Also, the corresponding coefficients for each process are $\Gamma_{P} = diag \left(\Gamma^{P}_e/2, ~\Gamma^{P}_x/2 \right)$, and we could define $\Gamma^{P}_\pm = \left(\Gamma^{P}_e \pm  \Gamma^{P}_x\right)/2$.
+
+There are the same parameters for antineutrinos, and the bar cap is added to indicate. Then, we could write down the equations of motion (EOM) for polarization vectors as follows (see Ref.~[\onlinecite{2021arXiv210411369J}]):
 \begin{widetext}
 \begin{eqnarray} 
 	\dot{\textbf{P}} &=& \omega \textbf{B} \times \textbf{P}+ \mu (\textbf{P}-\bar{\textbf{P}}) \times \textbf{P} - \Gamma^{CC}_+ \textbf{P}_T + \Gamma^{AE}_+ (\textbf{P}^{AE} - \textbf{P}) + \Gamma^{AE}_- (P^{AE}_0 -P_0)\textbf{z} \\
@@ -114,19 +119,21 @@ scattering (CC), and neutral-current scattering (NC), we have equations of motio
 	\dot{\bar{P_0}} &=& \bar{\Gamma}^{AE}_+ (\bar{P}^{AE}_0 -\bar{P}_0) + \bar{\Gamma}^{AE}_- (\bar{P}^{AE}_z -\bar{P}_z)
 \end{eqnarray}
 \end{widetext}
-, where  $\Gamma^{P}_\pm = \left(\Gamma^{P}_e \pm  \Gamma^{P}_x\right)/2$, $\Gamma_{P} = diag \left(\Gamma^{P}_e/2, ~\Gamma^{P}_x/2 \right)$.
+, where angular frequency in vacuum $\omega = \frac{\delta m^2}{2E}$ and $\mu = \sqrt{2} G_F$.
 
-In the following calculation, we then choose the parameters
-
+In the following calculation, we choose the parameters as below
 \begin{eqnarray}
 	\begin{bmatrix}
 		\omega \\ 
-		\textbf{B} \\ 
 		\mu \\ 
-		\theta
+		\theta\\
+		\textbf{B}
 	\end{bmatrix}
 	= \begin{bmatrix}
-		0.3 ~km^{-1} \\ -sin 2\theta~\textbf{e}_x^f + cos 2\theta~\textbf{e}_z^f \\ 3 \times 10^5 ~km^{-1} \\ 10^{-6}
+		0.3 ~km^{-1} \\ 
+		3 \times 10^5 ~km^{-1} \\ 
+		10^{-6} \\
+		-sin 2\theta~\textbf{e}_x^f + cos 2\theta~\textbf{e}_z^f 
 	\end{bmatrix}
 \end{eqnarray}
 \begin{eqnarray}
@@ -156,7 +163,7 @@ In the following calculation, we then choose the parameters
 	\end{bmatrix}
 \end{eqnarray}
 
-and theinitial condition
+Also, the initial condition
 \begin{eqnarray}
 \begin{bmatrix}
 	\textbf{P} \\ P_0 \\ \bar{\textbf{P}} \\ \bar{P}_0
@@ -166,10 +173,14 @@ and theinitial condition
 \end{bmatrix}
 \end{eqnarray}
 
+Note that we use $10^{33} ~cm^{-3}$ as the unit length in the vector space of polarization vectors.
+
 \section{\label{sec:results} Results}
+Here we will try to solve the equations of motion in the linear region and compare the analytical results with the numerical results. With this analytical solution, we could find an approximate expression for the start time and the growth rate of exponential growth in the limit cases, which characterize the bump.
 
 \subsection{\label{subsec:linear} Linearlized EOM}
-When $P_x, ~P_y \ll P_z \sim 1$, nonlinear terms could be ignored, we have
+When $P_x, ~P_y \ll P_z \sim 1$, the equations of motion become a series of linearlized equations, or
+
 \begin{widetext}
 \begin{eqnarray}
 	i \partial_t \rho_{ex} = \omega ~sin2\theta P_{z}
@@ -181,8 +192,6 @@ When $P_x, ~P_y \ll P_z \sim 1$, nonlinear terms could be ignored, we have
 where
 \begin{equation}
 \begin{cases}
-	B \equiv (sin 2\theta,0 ,cos 2\theta)
-	\\
 	\Gamma \equiv \Gamma^{AE} + \Gamma^{CC}
 	\\
 	\bar{\Gamma} \equiv \bar{\Gamma}^{AE} + \bar{\Gamma}^{CC}
@@ -220,6 +229,11 @@ A = \begin{bmatrix}
 Notice that, $P_{z}$ and $\bar{P}_{z}$ are both close to 1 under this limitation condition.
 
 \subsection{\label{subsec:analytic} Analytic Solution}
+\begin{figure}[b]
+	\includegraphics[scale=0.15]{compare.png}
+	\caption{\label{fig:compare} The absolute value of $\rho_{ex}$ and $\bar{\rho}_{ex}$ over time}
+\end{figure}
+
 Assume
 \begin{equation}
 	\begin{cases}
@@ -230,14 +244,16 @@ Assume
 \end{equation}
 , where $\rho^0_{ex}$ and $\bar{\rho}^0_{ex}$ satisfy
 \begin{equation}
+	\label{equ:rho0}
 	0= \begin{bmatrix}
 		\omega ~sin2\theta \\ - \omega ~sin2\theta
 	\end{bmatrix}  + 
 	A \begin{bmatrix} \rho^0_{ex} \\ \bar{\rho}^0_{ex}
 	\end{bmatrix}
 \end{equation}
-Then, from equation \ref{equ:EOM_matrix}, we have
-\begin{equation}
+Then, from equation (\ref{equ:EOM_matrix}), we have
+\begin{eqnarray}
+	\label{equ:eigenfunction}
 	\Omega 
 	\begin{bmatrix}
 		Q \\ \bar{Q}
@@ -246,7 +262,161 @@ Then, from equation \ref{equ:EOM_matrix}, we have
 	\begin{bmatrix}
 		Q \\ \bar{Q}
 	\end{bmatrix}
-\end{equation}
+\end{eqnarray}
+~\\
+Therefore, we could solve the eigenvalue problem of matrix $A$, and denote the eigenvalues and normalized eigenvectors as $\Omega_\pm$ and $\vec{v}_\pm$ respectively.
+
+Then,
+\begin{eqnarray}
+\begin{bmatrix}
+	\rho_{ex} (t)\\ \bar{\rho}_{ex} (t)
+\end{bmatrix}
+&=& \begin{bmatrix} 
+	\rho^0_{ex} \\ \bar{\rho}^0_{ex}
+\end{bmatrix} + 
+Q_+ \vec{v}_+
+e^{-i \Omega_{+} \bf{t}} +
+Q_- \vec{v}_-
+e^{-i \Omega_{-} \bf{t}} \nonumber \\
+&=&
+v
+\begin{bmatrix}
+	Q_-e^{-i \Omega_{-} \bf{t}} \\ Q_+e^{-i \Omega_{+} ~\bf{t}}
+\end{bmatrix} + 
+\begin{bmatrix} 
+	\rho^0_{ex} \\ \bar{\rho}^0_{ex}
+\end{bmatrix}
+\end{eqnarray}
+, where 
+\begin{eqnarray}
+v \equiv
+\begin{bmatrix}
+	\vec{v}_- ~~ \vec{v}_+
+\end{bmatrix}
+\end{eqnarray}
+and $Q_+$ and $Q_-$ satisfy
+\begin{eqnarray}
+\label{equ:Q}
+\begin{bmatrix}
+	Q_- \\ Q_+
+\end{bmatrix} =
+v^{-1}
+\begin{bmatrix}
+	- \rho^0_{ex} \\ -\bar{\rho}^0_{ex}
+\end{bmatrix}
+\end{eqnarray}
+
+Now, we could compare this analytical solution with the numerical solution (FIG. \ref{fig:compare}.).
+
+
+\subsection{\label{subsec:approximation} Approximation}
+In this subsection, we consider $\mu S, ~\mu D \gg \omega, ~\Gamma, ~\bar{\Gamma} $ and $\theta \ll 1$. Then, the zero order approximation of equation (\ref{equ:rho0}) 
+\begin{eqnarray}
+	\begin{bmatrix} 
+		\rho^0_{ex} \\ \bar{\rho}^0_{ex}
+	\end{bmatrix} 
+	&=& A^{-1} 
+	\begin{bmatrix}
+		-\omega ~sin2\theta \\ + \omega ~sin2\theta
+	\end{bmatrix} \nonumber \\
+	\label{equ:0_rho0}
+	&\simeq&
+	\frac{2\omega \theta}{\omega S + i\left[(S+D) \Gamma + (D-S) \bar{\Gamma}\right]}
+	\begin{bmatrix}
+		S+D \\ S-D
+	\end{bmatrix} \\
+	&\sim& \theta^1 \mu^0
+\end{eqnarray}
+
+On the other hand, the eigenvalues of A is
+\begin{eqnarray}
+	\begin{bmatrix}
+		\Omega_+ \\ \Omega_-
+	\end{bmatrix} \simeq
+	\begin{bmatrix}
+		\mu D + i \left[\frac{S}{2D}\left(\Gamma-\bar{\Gamma}\right)-\frac{1}{2}\left(\Gamma+\bar{\Gamma}\right)\right]\\
+		\frac{\omega S}{D} - i \left[\frac{S}{2D}\left(\Gamma-\bar{\Gamma}\right)+\frac{1}{2}\left(\Gamma+\bar{\Gamma}\right)\right]
+	\end{bmatrix}
+\end{eqnarray}
+Then, we could get the zero order approximation of the eigenvectors matrix 
+\begin{eqnarray}
+	\label{equ:0_eigenvectors}
+	v \simeq
+	\begin{bmatrix}
+		\frac{S+D}{\sqrt{2}\sqrt{S^2+D^2}} ~~~~~ \frac{1}{\sqrt{2}}\\
+		\frac{S-D}{\sqrt{2}\sqrt{S^2+D^2}} ~~~~~ \frac{1}{\sqrt{2}}
+	\end{bmatrix}
+\end{eqnarray}, or
+\begin{eqnarray}
+	\label{equ:0_antieigenvectors}
+	v^{-1}\simeq
+	\begin{bmatrix}
+		\frac{\sqrt{S^2+D^2}}{\sqrt{2}D} ~~~ -\frac{\sqrt{S^2+D^2}}{\sqrt{2}D}\\
+		\frac{D-S}{\sqrt{2}D} ~~~~~~~~~~ \frac{D+S}{\sqrt{2}D}
+	\end{bmatrix}
+\end{eqnarray}
+
+Substituting equation (\ref{equ:0_rho0}) and equation (\ref{equ:0_antieigenvectors}) into equation (\ref{equ:Q}), the zero order approximation of Q:
+\begin{eqnarray}
+	\label{equ:0_Q}
+	\begin{bmatrix}
+		Q_- \\ Q_+
+	\end{bmatrix} \simeq \frac{-4\sqrt{2}\omega \theta \sqrt{S^2+D^2}}{\omega S + i\left[(S+D) \Gamma + (D-S) \bar{\Gamma}\right]}
+	\begin{bmatrix}
+	1 \\ 0
+	\end{bmatrix}
+\end{eqnarray}
+Here we find that the zeroth order of $Q_+$ is approximately zero, which explains why the exponential growth takes some time to start, and also requires a high degree of precision for the numerical solution to come up with a bump.
+
+Since 
+\begin{eqnarray}
+	\begin{bmatrix}
+		\rho_{ex} (t)\\ \bar{\rho}_{ex} (t)
+	\end{bmatrix}
+	\simeq
+	Q_+e^{-i \Omega_{+} ~\bf{t}}
+	\begin{bmatrix}
+		v_{12}  \\ v_{22}
+	\end{bmatrix} + 
+	\begin{bmatrix} 
+		\rho^0_{ex} \\ \bar{\rho}^0_{ex}
+	\end{bmatrix}
+\end{eqnarray}
+when $|\rm{Im}\{\Omega_-\}| t>>1$, to get the start time of the exponential growing, we have to find the first order nonzero approximation of $Q_+$:
+\begin{eqnarray}
+	Q_+	&\simeq&
+	\frac{-2\sqrt{2}\omega \theta}{\mu \omega S - i \left[\mu_+ \Gamma - \mu_- \bar{\Gamma} \right]}
+	\begin{bmatrix}
+		-\frac{\mu_-'}{\mu D} \\ \frac{\mu_+}{\mu D}
+	\end{bmatrix}^T
+	\begin{bmatrix}
+		2\mu_+ + \omega - i \bar{\Gamma} \\ 2\mu_- + \omega + i \Gamma
+	\end{bmatrix} \nonumber \\
+	&\simeq&
+	\frac{-2 \theta\omega S}{\mu D^2}\\
+	&\sim&
+	\theta^1 \mu^{-1}
+\end{eqnarray}
+
+Therefore, the start time of the exponential grow
+\begin{eqnarray}
+	t_s	&\simeq& 
+	\frac{1}{\rm{Im}\{\Omega_+\}}ln(\frac{\left| \left(\rho^0_{ex}, ~\bar{\rho}^0_{ex}\right) \right|}{\left|Q_+\left(v_{12}, ~ v_{22}\right)\right|})	\nonumber \\
+	&\simeq&
+	\frac{1}{\left[\frac{S}{2D}\left(\Gamma-\bar{\Gamma}\right)-\frac{1}{2}\left(\Gamma+\bar{\Gamma}\right)\right]} \nonumber \\
+	&&\ln(\frac{2\mu D^2\sqrt{S^2+D^2}}{S\sqrt{\omega^2S^2+\left[(S+D) \Gamma + (D-S) \bar{\Gamma}\right]^2}}) \\
+	&\sim& \ln(\mu)
+\end{eqnarray}
+which is independent of $\theta$.
+
+Beside, we could get the time when the $\left| \left(\rho^0_{ex}, ~\bar{\rho}^0_{ex}\right) \right|$ reaches a particular density $(\rho_{p}) \ll 1$:
+\begin{eqnarray}
+	t_{p}	&\simeq& 
+	\frac{1}{\rm{Im}\{\Omega_+\}}ln(\frac{\rho_{p}}{\left|Q_+\left(v_{12}, ~ v_{22}\right)\right|})	\nonumber \\
+	&\simeq&
+	\frac{1}{\left[\frac{S}{2D}\left(\Gamma-\bar{\Gamma}\right)-\frac{1}{2}\left(\Gamma+\bar{\Gamma}\right)\right]} \ln(\frac{\mu D^2}{2\theta \omega S}) \\
+	&\sim& \ln(\mu \theta^{-1})
+\end{eqnarray}
 
 
 \section{\label{sec:disscussion} DISCUSSION}
@@ -332,7 +502,7 @@ Then, from equation \ref{equ:EOM_matrix}, we have
 %\end{acknowledgments}
 
 % Create the reference section using BibTeX:
-\bibliography{basename of .bib file}
+\bibliography{Collision}
 
 \end{document}
 %
