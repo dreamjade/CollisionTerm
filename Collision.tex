@@ -230,8 +230,8 @@ Notice that, $P_{z}$ and $\bar{P}_{z}$ are both close to 1 under this limitation
 
 \subsection{\label{subsec:analytic} Analytic Solution}
 \begin{figure}[b]
-	\includegraphics[scale=0.15]{compare.png}
-	\caption{\label{fig:compare} The absolute value of $\rho_{ex}$ and $\bar{\rho}_{ex}$ over time}
+	\includegraphics[scale=0.15]{compare_rho.png}
+	\caption{\label{fig:compare_rho} The absolute value of $\rho_{ex}$ and $\bar{\rho}_{ex}$ over time}
 \end{figure}
 
 Assume
@@ -306,10 +306,16 @@ v^{-1}
 \end{bmatrix}
 \end{eqnarray}
 
-Now, we could compare this analytical solution with the numerical solution (FIG. \ref{fig:compare}.).
+Now, we could compare this analytical solution with the numerical solution (FIG. \ref{fig:compare_rho}.).
 
 
 \subsection{\label{subsec:approximation} Approximation}
+
+\begin{figure}[b]
+	\includegraphics[scale=0.15]{compare_tp.png}
+	\caption{\label{fig:compare_tp} Comparing $t_p$ in equation (\ref{equ:tp}) with numerical simulation}
+\end{figure}
+
 In this subsection, we consider $\mu S, ~\mu D \gg \omega, ~\Gamma, ~\bar{\Gamma} $ and $\theta \ll 1$. Then, the zero order approximation of equation (\ref{equ:rho0}) 
 \begin{eqnarray}
 	\begin{bmatrix} 
@@ -411,6 +417,7 @@ which is independent of $\theta$.
 
 Beside, we could get the time when the $\left| \left(\rho^0_{ex}, ~\bar{\rho}^0_{ex}\right) \right|$ reaches a particular density $(\rho_{p}) \ll 1$:
 \begin{eqnarray}
+	\label{equ:tp}
 	t_{p}	&\simeq& 
 	\frac{1}{\rm{Im}\{\Omega_+\}}ln(\frac{\rho_{p}}{\left|Q_+\left(v_{12}, ~ v_{22}\right)\right|})	\nonumber \\
 	&\simeq&
@@ -418,6 +425,7 @@ Beside, we could get the time when the $\left| \left(\rho^0_{ex}, ~\bar{\rho}^0_
 	&\sim& \ln(\mu \theta^{-1})
 \end{eqnarray}
 
+For $\rho_p = 0.01$, we could compare the results of equation (\ref{equ:tp}) with the numerical simulation in FIG. \ref{fig:compare_tp}.
 
 \section{\label{sec:disscussion} DISCUSSION}
 
