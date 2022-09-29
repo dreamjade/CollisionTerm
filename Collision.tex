@@ -55,7 +55,7 @@
 % other information
 % \affiliation can be followed by \email, \homepage, \thanks as well.
 \author{YU-CHIA LIN}
-\email[]{yuchialin@unm.edu}
+\email[]{yuchialin@arizona.edu}
 %\homepage[]{Your web page}
 %\thanks{}
 %\altaffiliation{}
@@ -73,10 +73,9 @@
 
 \begin{abstract}
 % insert abstract here
-The interaction between collisions and collective neutrino oscillations has been a long-standing mystery. We study the effect of the collision term in neutrino flavor oscillations and focus on one case of collision-generated instabilities.
-We sought to develop an analytical model demonstrating how the asymmetry of collisional interactions between neutrinos and antineutrinos creates instability, an interplay that may be prevalent inside supernovae. 
-In addition, our model clearly shows when the exponential growth caused by this instability starts, how fast it grows, and the effect of various parameters on the bump.
-Our model may be applicable to a wider range of collision-generated instabilities.
+It has been a long-standing mystery how collisions and collective neutrino oscillations interact. We focus on one type of collision-generated instabilities as we investigate the impact of the collision term in neutrino flavor oscillations. In this model, the instability that may be common inside supernovae is caused by an asymmetry in the collisional interactions between neutrinos and antineutrinos. By creating analytical solutions, we sought to gain insight into such a mechanism. 
+
+Additionally, our analytical approach demonstrates precisely when the exponential growth brought on by this instability begins, how quickly it increases, and how different factors affect the bump, making it potentially meaningful to a wider variety of collision-generated instabilities models.
 \end{abstract}
 
 % insert suggested keywords - APS authors don't need to do this
@@ -110,7 +109,7 @@ and $\textbf{P}$ respectively, or
 As for the collision processes(P), we consider three types processes, absorption and emission (AE), charged current
 scattering (CC), and neutral-current scattering (NC). The corresponding polarization vectors in equilibrium states and  are denoted as $\textbf{P}^{P}$ and $P_0^P$. Also, the corresponding coefficients for each process are $\Gamma_{P} = diag \left(\Gamma^{P}_e/2, ~\Gamma^{P}_x/2 \right)$, and we could define $\Gamma^{P}_\pm = \left(\Gamma^{P}_e \pm  \Gamma^{P}_x\right)/2$.
 
-There are the same parameters for antineutrinos, and the bar cap is added to indicate. Then, we could write down the equations of motion (EOM) for polarization vectors as follows (see Ref.~[\onlinecite{2021arXiv210411369J}]):
+There are the same parameters for antineutrinos, and the bar cap is added to indicate. Then, we could write down the equations of motion for polarization vectors as follows (see Ref.~[\onlinecite{2021arXiv210411369J}]):
 \begin{widetext}
 \begin{eqnarray} 
 	\dot{\textbf{P}} &=& \omega \textbf{B} \times \textbf{P}+ \mu (\textbf{P}-\bar{\textbf{P}}) \times \textbf{P} - \Gamma^{CC}_+ \textbf{P}_T + \Gamma^{AE}_+ (\textbf{P}^{AE} - \textbf{P}) + \Gamma^{AE}_- (P^{AE}_0 -P_0)\textbf{z} \\
@@ -121,8 +120,9 @@ There are the same parameters for antineutrinos, and the bar cap is added to ind
 \end{widetext}
 , where angular frequency in vacuum $\omega = \frac{\delta m^2}{2E}$ and $\mu = \sqrt{2} G_F$.
 
-In the following calculation, we choose the parameters as below
+In the following calculations, unless otherwise specified, we choose the following parameter values
 \begin{eqnarray}
+	\label{equ:par_constant}
 	\begin{bmatrix}
 		\omega \\ 
 		\mu \\ 
@@ -131,12 +131,13 @@ In the following calculation, we choose the parameters as below
 	\end{bmatrix}
 	= \begin{bmatrix}
 		0.3 ~km^{-1} \\ 
-		3 \times 10^5 ~km^{-1} \\ 
+		6 \times 10^5 ~km^{-1} \\ 
 		10^{-6} \\
 		-sin 2\theta~\textbf{e}_x^f + cos 2\theta~\textbf{e}_z^f 
 	\end{bmatrix}
 \end{eqnarray}
 \begin{eqnarray}
+	\label{equ:par_gamma}
 	\begin{bmatrix}
 		\Gamma^{CC}_+ \\ \Gamma^{AE}_+ \\ \Gamma^{AE}_-
 	\end{bmatrix}
@@ -146,6 +147,7 @@ In the following calculation, we choose the parameters as below
 \end{eqnarray}
 
 \begin{eqnarray}
+	\label{equ:par_bgamma}
 	\begin{bmatrix}
 		\bar{\Gamma}^{CC}_+ \\ \bar{\Gamma}^{AE}_+ \\ \bar{\Gamma}^{AE}_-
 	\end{bmatrix}
@@ -155,6 +157,7 @@ In the following calculation, we choose the parameters as below
 \end{eqnarray}
 
 \begin{eqnarray}
+	\label{equ:par_P}
 	\begin{bmatrix}
 		\textbf{P}^{AE} \\ P^{AE}_0 \\ \bar{\textbf{P}}^{AE} \\ \bar{P}^{AE}_0
 	\end{bmatrix}
@@ -165,12 +168,13 @@ In the following calculation, we choose the parameters as below
 
 Also, the initial condition
 \begin{eqnarray}
-\begin{bmatrix}
-	\textbf{P} \\ P_0 \\ \bar{\textbf{P}} \\ \bar{P}_0
-\end{bmatrix}
-= \begin{bmatrix}
-	2 ~\textbf{e}_z^f\\ 4 \\ 1.5 ~\textbf{e}_z^f \\ 3.5
-\end{bmatrix}
+	\label{equ:ini_condition}
+	\begin{bmatrix}
+		\textbf{P} \\ P_0 \\ \bar{\textbf{P}} \\ \bar{P}_0
+	\end{bmatrix}
+	= \begin{bmatrix}
+		2 ~\textbf{e}_z^f\\ 4 \\ 1.5 ~\textbf{e}_z^f \\ 3.5
+	\end{bmatrix}
 \end{eqnarray}
 
 Note that we use $10^{33} ~cm^{-3}$ as the unit length in the vector space of polarization vectors.
@@ -178,8 +182,14 @@ Note that we use $10^{33} ~cm^{-3}$ as the unit length in the vector space of po
 \section{\label{sec:results} Results}
 Here we will try to solve the equations of motion in the linear region and compare the analytical results with the numerical results. With this analytical solution, we could find an approximate expression for the start time and the growth rate of exponential growth in the limit cases, which characterize the bump.
 
-\subsection{\label{subsec:linear} Linearlized EOM}
-When $P_x, ~P_y \ll P_z \sim 1$, the equations of motion become a series of linearlized equations, or
+\subsection{\label{subsec:num} Numerical Solution}
+Given initial conditions and parameters as described in equation (\ref{equ:par_constant}), (\ref{equ:par_gamma}), (\ref{equ:par_bgamma}), (\ref{equ:par_P}), and (\ref{equ:ini_condition}), we could obtain the numerical solutions via the equations of motion of polarization vectors. We plot the results in FIG. \ref{fig:compare_rho} and show them as solid lines.
+
+It should be emphasized that there is a requirement for the precision of numerical simulations in order to produce consistent results. We need to be quite careful, especially when $\mu$ are really large or $\theta$ is quite little. The detailed reasoning behind it will be discussed in subsection \ref{subsec:precision_of_num}.
+
+\subsection{\label{subsec:linear} Linearlized Equations of Motion}
+We need to determine when the equations of motion is a system of linear equations in order to obtain an analytical solution.
+Actually, when $P_x, ~P_y \ll P_z \sim 1$, the equations of motion become
 
 \begin{widetext}
 \begin{eqnarray}
@@ -237,10 +247,10 @@ A = \begin{bmatrix}
 Notice that, $P_{z}$ and $\bar{P}_{z}$ are both close to 1 under this limitation condition.
 
 \subsection{\label{subsec:analytic} Analytic Solution}
-\begin{figure}[b]
-	\includegraphics[scale=0.15]{compare_rho.png}
+\begin{figure*}[t]
+	\includegraphics[scale=0.28]{compare_rho.png}
 	\caption{\label{fig:compare_rho} The absolute value of $\rho_{ex}$ and $\bar{\rho}_{ex}$ over time}
-\end{figure}
+\end{figure*}
 
 Assume
 \begin{equation}
@@ -250,16 +260,7 @@ Assume
 		\bar{\rho}_{ex}(t) = \bar{\rho}^0_{ex} + \bar{Q} e^{-i\Omega t}
 	\end{cases}
 \end{equation}
-, where $\rho^0_{ex}$ and $\bar{\rho}^0_{ex}$ satisfy
-\begin{equation}
-	\label{equ:rho0}
-	0= \begin{bmatrix}
-		\omega ~sin2\theta \\ - \omega ~sin2\theta
-	\end{bmatrix}  + 
-	A \begin{bmatrix} \rho^0_{ex} \\ \bar{\rho}^0_{ex}
-	\end{bmatrix}
-\end{equation}
-Then, from equation (\ref{equ:EOM_matrix}), we have
+from equation (\ref{equ:EOM_matrix}), we then have
 \begin{eqnarray}
 	\label{equ:eigenfunction}
 	\Omega 
@@ -270,12 +271,21 @@ Then, from equation (\ref{equ:EOM_matrix}), we have
 	\begin{bmatrix}
 		Q \\ \bar{Q}
 	\end{bmatrix}
-\end{eqnarray}
-~\\
+\end{eqnarray}, where $\rho^0_{ex}$ and $\bar{\rho}^0_{ex}$ satisfy
+\begin{equation}
+	\label{equ:rho0}
+	0= \begin{bmatrix}
+		\omega ~sin2\theta \\ - \omega ~sin2\theta
+	\end{bmatrix}  + 
+	A \begin{bmatrix} \rho^0_{ex} \\ \bar{\rho}^0_{ex}
+	\end{bmatrix}
+\end{equation}
+
 Therefore, we could solve the eigenvalue problem of matrix $A$, and denote the eigenvalues and normalized eigenvectors as $\Omega_\pm$ and $\vec{v}_\pm$ respectively.
 
 Then,
 \begin{eqnarray}
+\label{equ:rho_ana}
 \begin{bmatrix}
 	\rho_{ex} (t)\\ \bar{\rho}_{ex} (t)
 \end{bmatrix}
@@ -314,17 +324,17 @@ v^{-1}
 \end{bmatrix}
 \end{eqnarray}
 
-Now, we could compare this analytical solution with the numerical solution (FIG. \ref{fig:compare_rho}.).
+Now, we could compare this analytical solution with the numerical solution in FIG. \ref{fig:compare_rho}.
 
 
-\subsection{\label{subsec:approximation} Approximation}
+\subsection{\label{subsec:approximation} Approximate and Analytical Expressions}
 
 \begin{figure}[b]
-	\includegraphics[scale=0.39]{compare_tp_mu.png}
+	\includegraphics[scale=0.13]{compare_tp_mu.png}
 	\caption{\label{fig:compare_tp_mu} Comparing $t_p$ in equation (\ref{equ:tp}) with numerical simulation for different $\mu$}
 \end{figure}
 \begin{figure}[b]
-	\includegraphics[scale=0.39]{compare_tp_theta.png}
+	\includegraphics[scale=0.13]{compare_tp_theta.png}
 	\caption{\label{fig:compare_tp_theta} Comparing $t_p$ in equation (\ref{equ:tp}) with numerical simulation for different $\theta$}
 \end{figure}
 
@@ -384,9 +394,9 @@ Substituting equation (\ref{equ:0_rho0}) and equation (\ref{equ:0_antieigenvecto
 	1 \\ 0
 	\end{bmatrix}
 \end{eqnarray}
-Here we find that the zeroth order of $Q_+$ is approximately zero, which explains why the exponential growth takes some time to start, and also requires a high degree of precision for the numerical solution to come up with a bump.
+Here we discover that the zeroth order of $Q_+$ is approximately zero, explaining why the exponential growth takes some time to start,  why a high level of precision is necessary for the numerical solution to produce an accurate bump (see subsection \ref{subsec:precision_of_num}).
 
-Since 
+When $|\rm{Im}\{\Omega_-\}| t>>1$, equation (\ref{equ:rho_ana}) could be simplified to
 \begin{eqnarray}
 	\begin{bmatrix}
 		\rho_{ex} (t)\\ \bar{\rho}_{ex} (t)
@@ -400,8 +410,10 @@ Since
 		\rho^0_{ex} \\ \bar{\rho}^0_{ex}
 	\end{bmatrix}
 \end{eqnarray}
-when $|\rm{Im}\{\Omega_-\}| t>>1$, to get the start time of the exponential growing, we have to find the first order nonzero approximation of $Q_+$:
+
+Therefore, to get the start time of the exponential growing, we have to find the first order nonzero approximation of $Q_+$:
 \begin{eqnarray}
+	\label{equ:Qp}
 	Q_+	&\simeq&
 	\frac{-2\sqrt{2}\omega \theta}{\mu \omega S - i \left[\mu_+ \Gamma - \mu_- \bar{\Gamma} \right]}
 	\begin{bmatrix}
@@ -416,7 +428,7 @@ when $|\rm{Im}\{\Omega_-\}| t>>1$, to get the start time of the exponential grow
 	\theta^1 \mu^{-1}
 \end{eqnarray}, where $\mu_-' \equiv \mu_- + \omega + i \Gamma + \Omega_-$.
 
-Therefore, the start time of the exponential grow
+Finally, we could obtain the start time of the exponential growth
 \begin{eqnarray}
 	t_s	&\simeq& 
 	\frac{1}{\rm{Im}\{\Omega_+\}}ln(\frac{\left| \left(\rho^0_{ex}, ~\bar{\rho}^0_{ex}\right) \right|}{\left|Q_+\left(v_{12}, ~ v_{22}\right)\right|})	\nonumber \\
@@ -427,7 +439,7 @@ Therefore, the start time of the exponential grow
 \end{eqnarray}
 which is independent of $\theta$.
 
-Beside, we could get the time when the $\left| \left(\rho^0_{ex}, ~\bar{\rho}^0_{ex}\right) \right|$ reaches a particular density $(\rho_{p}) \ll 1$:
+Moreover, with a similar analysis, we could get the time it takes for the absolute density, $\left| \left(\rho^0_{ex}, ~\bar{\rho}^0_{ex}\right) \right|$, to reach a particular density $(\rho_{p}) \ll 1$:
 \begin{eqnarray}
 	\label{equ:tp}
 	t_{p}	&\simeq& 
@@ -437,9 +449,25 @@ Beside, we could get the time when the $\left| \left(\rho^0_{ex}, ~\bar{\rho}^0_
 	&\sim& \ln(\mu^1 \theta^{-1})
 \end{eqnarray}
 
-For $\rho_p = 0.01$, we could compare the results of equation (\ref{equ:tp}) with the numerical simulation in FIG. \ref{fig:compare_tp}.
+For $\rho_p = 0.01$, we could compare the results of equation (\ref{equ:tp}) with the numerical simulation in FIG. \ref{fig:compare_tp_mu} and \ref{fig:compare_tp_theta}.
 
 \section{\label{sec:disscussion} DISCUSSION}
+In this section, we'll go into more detail about how analytical solutions give us detailed knowledge that will enable us to comprehend the complete model and the mechanism underlying collision-generated instabilities.
+
+\subsection{\label{subsec:precision_of_num}Precision Requirements for Numerical Simulations}
+Substituting the parameters into equation (\ref{equ:Qp}), we have 
+\begin{eqnarray}
+	\label{equ:Qp_num}
+	\left|Q_+\right|
+	&\simeq&
+	\frac{2 \theta\omega S}{\mu D^2}\nonumber \\
+	&\simeq&
+	1.4 \times 10^{-11} \left(\frac{\theta}{10^{-6}}\right) \left(\frac{\mu}{6 \times 10^5 \rm{~km^{-1}}}\right)^{-1}
+\end{eqnarray}
+Therefore, to get a realistic and accurate bump shape, the numerical simulation precision should be much smaller than $Q_+$. 
+
+\subsection{\label{subsec:deviation} Deviation between Analytical Solution and Numerical Simulation}
+In FIG. \ref{fig:compare_tp_mu} and \ref{fig:compare_tp_theta}, We could find that when $\theta$ is not small enough or $\mu$ is not large enough,
 
 \section{\label{sec:conclusion} CONCLUSIONS}
 
@@ -527,4 +555,3 @@ For $\rho_p = 0.01$, we could compare the results of equation (\ref{equ:tp}) wit
 \end{document}
 %
 % ****** End of file apstemplate.tex ******
-
