@@ -193,9 +193,9 @@ Actually, when $P_x, ~P_y \ll P_z \sim 1$, the equations of motion become
 
 \begin{widetext}
 \begin{eqnarray}
-	i \partial_t \rho_{ex} = \omega ~sin2\theta P_{z}
+	i \partial_t \rho_{ex} = \omega ~sin2\theta \frac{P_{z}}{2}
 	+\left[-\omega ~cos2\theta-\sqrt{2}G_F(n_{\bar{\nu}_e}-n_{\bar{\nu}_x})- i \Gamma \right]\rho_{ex} + \sqrt{2}G_F(n_{\nu_e}-n_{\nu_x}) \bar{\rho}_{ex}\\
-	i \partial_t \bar{\rho}_{ex} = - \omega ~sin2\theta \bar{P}_{z} +\left[+\omega ~cos2\theta + \sqrt{2}G_F(n_{\nu_e}-n_{\nu_x}) - i \bar{\Gamma} \right]\bar{\rho}_{ex} -\sqrt{2}G_F(n_{\bar{\nu}_e}-n_{\bar{\nu}_x}) \rho_{ex}
+	i \partial_t \bar{\rho}_{ex} = - \omega ~sin2\theta \frac{\bar{P}_{z}}{2} +\left[+\omega ~cos2\theta + \sqrt{2}G_F(n_{\nu_e}-n_{\nu_x}) - i \bar{\Gamma} \right]\bar{\rho}_{ex} -\sqrt{2}G_F(n_{\bar{\nu}_e}-n_{\bar{\nu}_x}) \rho_{ex}
 \end{eqnarray}
 \end{widetext}
 ,
@@ -236,15 +236,16 @@ A = \begin{bmatrix}
 	\label{equ:EOM_matrix}
 	i \partial_t \begin{bmatrix}
 		\rho_{ex} \\ \bar{\rho}_{ex}
-	\end{bmatrix} =
+	\end{bmatrix} \simeq
+	\frac{\omega}{2} ~sin2\theta 
 	\begin{bmatrix}
-		\omega ~sin2\theta \\ - \omega ~sin2\theta
+		P_{z}^0 \\ -\bar{P}_{z}^0
 	\end{bmatrix} + A \begin{bmatrix}
 		\rho_{ex} \\ \bar{\rho}_{ex}
 	\end{bmatrix}
 \end{equation}
 
-Notice that, $P_{z}$ and $\bar{P}_{z}$ are both close to 1 under this limitation condition.
+Notice that, $P_{z}$ and $\bar{P}_{z}$ are close to $P_{z}^0 = 2$ and $\bar{P}_{z}^0 = 1.5$ respectively under this limitation condition.
 
 \subsection{\label{subsec:analytic} Analytic Solution}
 \begin{figure*}[t]
@@ -274,8 +275,8 @@ from equation (\ref{equ:EOM_matrix}), we then have
 \end{eqnarray}, where $\rho^0_{ex}$ and $\bar{\rho}^0_{ex}$ satisfy
 \begin{equation}
 	\label{equ:rho0}
-	0= \begin{bmatrix}
-		\omega ~sin2\theta \\ - \omega ~sin2\theta
+	0= \frac{\omega}{2} ~sin2\theta \begin{bmatrix}
+		P_{z}^0 \\ -\bar{P}_{z}^0
 	\end{bmatrix}  + 
 	A \begin{bmatrix} \rho^0_{ex} \\ \bar{\rho}^0_{ex}
 	\end{bmatrix}
@@ -338,18 +339,17 @@ Now, we could compare this analytical solution with the numerical solution in FI
 	\caption{\label{fig:compare_tp_theta} Comparing $t_p$ in equation (\ref{equ:tp}) with numerical simulation for different $\theta$}
 \end{figure}
 
-In this subsection, we consider $\mu S, ~\mu D \gg \omega, ~\Gamma, ~\bar{\Gamma} $ and $\theta \ll 1$. Then, the zero order approximation of equation (\ref{equ:rho0}) 
+In this subsection, we consider $\mu S, ~\mu D \gg \omega, ~\Gamma, ~\bar{\Gamma} $ and $\theta \ll 1$. Then, we could write down the zero order approximation of equation (\ref{equ:rho0}),
 \begin{eqnarray}
 	\begin{bmatrix} 
 		\rho^0_{ex} \\ \bar{\rho}^0_{ex}
 	\end{bmatrix} 
-	&=& A^{-1} 
-	\begin{bmatrix}
-		-\omega ~sin2\theta \\ + \omega ~sin2\theta
+	&=& \frac{\omega}{2} ~sin2\theta A^{-1} \begin{bmatrix}
+		-P_{z}^0 \\ \bar{P}_{z}^0
 	\end{bmatrix} \nonumber \\
 	\label{equ:0_rho0}
 	&\simeq&
-	\frac{2\omega \theta}{\omega S + i\left[(S+D) \Gamma + (D-S) \bar{\Gamma}\right]}
+	\frac{\omega \theta \left(P_{z}^0 + \bar{P}_{z}^0\right)/2}{\omega S + i\left[(S+D) \Gamma + (D-S) \bar{\Gamma}\right]}
 	\begin{bmatrix}
 		S+D \\ S-D
 	\end{bmatrix} \\
@@ -384,12 +384,12 @@ Then, we could get the zero order approximation of the eigenvectors matrix
 	\end{bmatrix}
 \end{eqnarray}
 
-Substituting equation (\ref{equ:0_rho0}) and equation (\ref{equ:0_antieigenvectors}) into equation (\ref{equ:Q}), the zero order approximation of Q:
+Substituting equation (\ref{equ:0_rho0}) and equation (\ref{equ:0_antieigenvectors}) into equation (\ref{equ:Q}), we could obtain the zero order approximation of Q:
 \begin{eqnarray}
 	\label{equ:0_Q}
 	\begin{bmatrix}
 		Q_- \\ Q_+
-	\end{bmatrix} \simeq \frac{-4\sqrt{2}\omega \theta \sqrt{S^2+D^2}}{\omega S + i\left[(S+D) \Gamma + (D-S) \bar{\Gamma}\right]}
+	\end{bmatrix} \simeq \frac{-\sqrt{2} \left(P_{z}^0 + \bar{P}_{z}^0\right)\omega \theta \sqrt{S^2+D^2}}{\omega S + i\left[(S+D) \Gamma + (D-S) \bar{\Gamma}\right]}
 	\begin{bmatrix}
 	1 \\ 0
 	\end{bmatrix}
@@ -434,7 +434,7 @@ Finally, we could obtain the start time of the exponential growth
 	\frac{1}{\rm{Im}\{\Omega_+\}}ln(\frac{\left| \left(\rho^0_{ex}, ~\bar{\rho}^0_{ex}\right) \right|}{\left|Q_+\left(v_{12}, ~ v_{22}\right)\right|})	\nonumber \\
 	&\simeq&
 	\frac{1}{\left[\frac{S}{2D}\left(\Gamma-\bar{\Gamma}\right)-\frac{1}{2}\left(\Gamma+\bar{\Gamma}\right)\right]} \nonumber \\
-	&&\ln(\frac{2\mu D^2\sqrt{S^2+D^2}}{S\sqrt{\omega^2S^2+\left[(S+D) \Gamma + (D-S) \bar{\Gamma}\right]^2}}) \\
+	&&\ln(\frac{ \left(P_{z}^0 + \bar{P}_{z}^0\right)\mu D^2\sqrt{S^2+D^2}/2S}{\sqrt{\omega^2S^2+\left[(S+D) \Gamma + (D-S) \bar{\Gamma}\right]^2}}) \\
 	&\sim& \ln(\mu^1 \theta^0)
 \end{eqnarray}
 which is independent of $\theta$.
@@ -556,4 +556,3 @@ The deviation of the analytical solution derived from the linear system of equat
 \end{document}
 %
 % ****** End of file apstemplate.tex ******
-
