@@ -415,15 +415,14 @@ Therefore, to get the start time of the exponential growing, we have to find the
 \begin{eqnarray}
 	\label{equ:Qp}
 	Q_+	&\simeq&
-	\frac{-2\sqrt{2}\omega \theta}{\mu \omega S - i \left[\mu_+ \Gamma - \mu_- \bar{\Gamma} \right]}
+	\frac{\sqrt{2}\omega \theta/ \mu D \begin{bmatrix}
+			-\mu_-' \\ \mu_+
+		\end{bmatrix}^T}{\mu \omega S - i \left[\mu_+ \Gamma - \mu_- \bar{\Gamma} \right]}
 	\begin{bmatrix}
-		-\frac{\mu_-'}{\mu D} \\ \frac{\mu_+}{\mu D}
-	\end{bmatrix}^T
-	\begin{bmatrix}
-		2\mu_+ + \omega - i \bar{\Gamma} \\ 2\mu_- + \omega + i \Gamma
+		\left(P_z^0 + \bar{P}_{z}^0\right)\mu_+ + (\omega - i \bar{\Gamma})P_z^0  \\ \left(P_z^0 + \bar{P}_{z}^0\right)\mu_- + (\omega + i \Gamma)\bar{P}_{z}^0
 	\end{bmatrix} \nonumber \\
 	&\simeq&
-	\frac{-2 \theta\omega S}{\mu D^2}\\
+	\frac{-\sqrt{2} \theta\omega}{\mu D}\left[\left(\frac{P_z^0 + \bar{P}_{z}^0}{2}\right)\left(\frac{S}{D}\right)-\left(\frac{P_z^0 - \bar{P}_{z}^0}{2}\right)\right]\\
 	&\sim&
 	\theta^1 \mu^{-1}
 \end{eqnarray}, where $\mu_-' \equiv \mu_- + \omega + i \Gamma + \Omega_-$.
@@ -432,9 +431,6 @@ Finally, we could obtain the start time of the exponential growth
 \begin{eqnarray}
 	t_s	&\simeq& 
 	\frac{1}{\rm{Im}\{\Omega_+\}}ln(\frac{\left| \left(\rho^0_{ex}, ~\bar{\rho}^0_{ex}\right) \right|}{\left|Q_+\left(v_{12}, ~ v_{22}\right)\right|})	\nonumber \\
-	&\simeq&
-	\frac{1}{\left[\frac{S}{2D}\left(\Gamma-\bar{\Gamma}\right)-\frac{1}{2}\left(\Gamma+\bar{\Gamma}\right)\right]} \nonumber \\
-	&&\ln(\frac{ \left(P_{z}^0 + \bar{P}_{z}^0\right)\mu D^2\sqrt{S^2+D^2}/2S}{\sqrt{\omega^2S^2+\left[(S+D) \Gamma + (D-S) \bar{\Gamma}\right]^2}}) \\
 	&\sim& \ln(\mu^1 \theta^0)
 \end{eqnarray}
 which is independent of $\theta$.
@@ -444,8 +440,6 @@ Moreover, with a similar analysis, we could get the time it takes for the absolu
 	\label{equ:tp}
 	t_{p}	&\simeq& 
 	\frac{1}{\rm{Im}\{\Omega_+\}}ln(\frac{\rho_{p}}{\left|Q_+\left(v_{12}, ~ v_{22}\right)\right|})	\nonumber \\
-	&\simeq&
-	\frac{1}{\left[\frac{S}{2D}\left(\Gamma-\bar{\Gamma}\right)-\frac{1}{2}\left(\Gamma+\bar{\Gamma}\right)\right]} \ln(\frac{\rho_{p} \mu D^2}{2\theta \omega S}) \\
 	&\sim& \ln(\mu^1 \theta^{-1})
 \end{eqnarray}
 
@@ -460,9 +454,7 @@ Substituting the parameters into equation (\ref{equ:Qp}), we have
 	\label{equ:Qp_num}
 	\left|Q_+\right|
 	&\simeq&
-	\frac{2 \theta\omega S}{\mu D^2}\nonumber \\
-	&\simeq&
-	1.4 \times 10^{-11} \left(\frac{\theta}{10^{-6}}\right) \left(\frac{\mu}{6 \times 10^5 \rm{~km^{-1}}}\right)^{-1}
+	1.7 \times 10^{-11} \left(\frac{\theta}{10^{-6}}\right) \left(\frac{\mu}{6 \times 10^5 \rm{~km^{-1}}}\right)^{-1}
 \end{eqnarray}
 Therefore, to get a realistic and accurate bump shape, the numerical simulation precision should be much smaller than $Q_+$. 
 
